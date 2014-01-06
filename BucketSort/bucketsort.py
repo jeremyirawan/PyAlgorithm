@@ -1,14 +1,18 @@
-def bucketsort(data):
-    arr = []
-    count = [0] * len(data)
-    
+def bucketSort(data):
+    max = data[0]
     for x in data:
-        count[x] += 1
+        if x > max:
+            max = x
     
-    for y, amount in enumerate(count):
-        data.extend([y] * amount)
+    bucket = [0]*(max + 1)
+    for y in data:
+        bucket[y] += 1
     
-    return arr
+    result = []
+    for i in range(max+1):
+        for j in range(bucket[i]):
+            result.append(i)
+    return result
 
-blah = [24,125,67,8,35,45,23,856,4,347,56,34,65,234,45]
-print bucketsort(blah)
+blah = [123,512,5,6,2,1,123,1,25,1,26]
+print bucketSort(blah)
