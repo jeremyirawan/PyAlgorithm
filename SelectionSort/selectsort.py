@@ -23,7 +23,8 @@ class Selectsort:
             self.array[x] = minimum
         return self.array
 
-
-my_array = [56, 61, 62, 732, 236, 2723, 42, 41, 212, 156, 552, 3412, 236, 66, 125]
+import random
+my_array = random.sample(range(772), 83)
+print "Your array before sorting: ", my_array
 my_result = Selectsort(my_array)
-print my_result.sort()
+print "You array after sorting: ", my_result.sort(my_array)

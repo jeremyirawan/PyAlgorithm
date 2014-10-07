@@ -13,7 +13,7 @@ class Bucketsort:
     def __init__(self, dataset):
         self.dataset = dataset
 
-    def sortBucket(self):
+    def sort(self):
         max = self.dataset[0]
         for x in self.dataset:
             if x > max:
@@ -30,6 +30,8 @@ class Bucketsort:
 
         print result
 
-my_array = [532,66, 15, 636, 12, 81, 83, 12, 62, 1, 206]
-my_data = Bucketsort(my_array)
-my_data.sortBucket()
+import random
+my_array = random.sample(range(250), 17)
+print "Your array before sorting: ", my_array
+my_result = Bucketsort(my_array)
+print "You array after sorting: ", my_result.sort()

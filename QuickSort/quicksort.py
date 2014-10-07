@@ -25,12 +25,15 @@ class Quicksort:
                 equal.append(x)
         return less, equal, greater
 
-    def qsort(self, array):
+    def sort(self, array):
         if array:
             less, equal, greater = self.partition(array)
-            return self.qsort(less) + equal + self.qsort(greater)
+            return self.sort(less) + equal + self.sort(greater)
         return array
 
-my_array = [12, 434, 515, 26, 7, 3, 122, 15, 100, 152, 167, 623, 724, 541, 523, 1, 4, 3, 50, 79]
-my_result = Quicksort("Quicksort")
-print my_result.qsort(my_array)
+
+import random
+my_array = random.sample(range(361), 37)
+print "Your array before sorting: ", my_array
+my_result = Quicksort("Quick Sort")
+print "You array after sorting: ", my_result.sort(my_array)

@@ -13,7 +13,7 @@ class Bubblesort:
     def __init__(self, dataset):
         self.dataset = dataset
 
-    def sortBubble(self):
+    def sort(self):
         length = len(self.dataset)-1
         sorted = False
 
@@ -25,6 +25,8 @@ class Bubblesort:
                     self.dataset[x], self.dataset[x+1] = self.dataset[x+1], self.dataset[x]
         print self.dataset
 
-my_array = [123,51,23,152,61,512,6,24,62,723,342,523,12,532,63,73]
-my_data = Bubblesort(my_array)
-my_data.sortBubble()
+import random
+my_array = random.sample(range(237), 28)
+print "Your array before sorting: ", my_array
+my_result = Bubblesort(my_array)
+print "You array after sorting: ", my_result.sort()

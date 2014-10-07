@@ -13,15 +13,15 @@ class Mergesort:
     def __init__(self, name):
         self.name = name
 
-    def mergesort(self, array):
+    def sort(self, array):
         result = []
 
         if len(array) < 2:
             return array
 
         mid = int(len(array) / 2)
-        upper = self.mergesort(array[:mid])
-        lower = self.mergesort(array[mid:])
+        upper = self.sort(array[:mid])
+        lower = self.sort(array[mid:])
 
         while (len(upper) > 0) or (len(lower) > 0):
             if len(upper) > 0 and len(lower) > 0:
@@ -41,6 +41,8 @@ class Mergesort:
                     upper.pop(0)
         return result
 
-my_array = [72, 152, 16, 954, 4, 2143, 374, 23, 56, 7, 96, 7, 69, 35, 67, 296]
-my_data = Mergesort('Meh')
-print my_data.mergesort(my_array)
+import random
+my_array = random.sample(range(512), 45)
+print "Your array before sorting: ", my_array
+my_result = Mergesort("Merge Sort")
+print "You array after sorting: ", my_result.sort(my_array)
